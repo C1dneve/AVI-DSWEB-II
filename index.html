@@ -1,172 +1,197 @@
-
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Lista de Exercícios - JavaScript</title>
-
+    <title>AVI DSWEBII</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-
     <header class="header">
-        <div class="container">
-            <h1>Lista de Exercícios</h1>
-            <p>HTML • CSS • JavaScript</p>
-        </div>
+        <nav class="navbar">
+            <div class="container">
+                <a href="#inicio">Inicio</a>
+                <a href="#exercicio1">exercicio 1</a>
+                <a href="#exercicio2">exercicio 2</a>
+                <a href="#exercicio3">exercicio 3</a>
+                <a href="#exercicio4">exercicio 4</a>
+                <a href="#exercicio5">exercicio 5</a>
+                <a href="#exercicio6">exercicio 6</a> 
+            </div>
+        </nav>
     </header>
-
-    <nav class="navbar">
-        <div class="container">
-            <a href="#inicio">Início</a>
-            <a href="#exercicio1">Exercício 1</a>
-            <a href="#exercicio2">Exercício 2</a>
-            <a href="#exercicio3">Exercício 3</a>
-            <a href="#exercicio4">Exercício 4</a>
-            <a href="#exercicio5">Exercício 5</a>
-            <a href="#exercicio6">Exercício 6</a>
-        </div>
-    </nav>
-
     <main>
-
-        <section id="inicio" class="hero">
-            <div class="container">
-                <h2>Prática de JavaScript</h2>
-
+        <section class="hero">
+            <div  class="container">
+                <h2>
+                    AVI DSWEBII -Exercicios
+                </h2>
                 <p>
-                    Página central para os exercícios de HTML, CSS e JavaScript.
-                </p>
-
-                <p>
-                    Utilize o menu acima para navegar entre os exercícios.
+                    Utilize da navbar para navegar
                 </p>
             </div>
         </section>
-
-
-        <section id="exercicio1" class="exercise">
-            <div class="container">
-                <h2>Exercício 1</h2>
-
-                <h3>Frete com múltiplos pedidos e relatório final</h3>
-
+        <section class="exercise">
+            <div id="exercicio1" class="container">
+                <h2>
+                    Exercicio 1
+                </h2>
                 <p>
-                    Sistema para cálculo de frete de múltiplos pedidos,
-                    considerando região, distância, quantidade de peças
-                    e rastreamento.
+                    bla bla bvla
                 </p>
-
                 <div class="exercise-content">
-                    <!-- Interface do exercício será criada com JavaScript -->
+                    <div class="configuracao">
+                        <label>
+                            Insira o preço da gasolina
+                            <input id="gasolina" type="number" min="0" placeholder="EXEMPLO 5.44" step="0.01">
+                        </label>
+                    </div>
+                    <div class="campos">
+                        <input id="codigo" placeholder="Codigo unico do pedido">
+                        <select id="regiao">
+                            <option value="">Região</option>
+                            <option value="1">1 - Sudeste</option>
+                            <option value="2">2 - Sul</option>
+                            <option value="3">3 - Centro-Oeste</option>
+                        </select>
+                        <input id="km" type="number" min="1" placeholder="Distância em KM">
+                        <input id="pecas" type="number" min="1" placeholder="Quantidade de Peças">
+                        <select id="rastreamento">
+                            <option value="">Rastreamento(S/N)?</option>
+                            <option value="S">S - Sim</option>
+                            <option value="N">N - Não</option>    
+                        </select>
+                    </div>
+                    <button onclick="addPedido()">Adicionar Pedido</button>
+                    <button class="secundario" onclick="relatorio()">Relatorio</button>
+                    <p id="freteMensagem" class="mensagem"></p>
+                    <div id="freteLista" class="lista">
+                        
+                    </div>
+                    <div id="freteRelatorio" class="relatorio">
+
+                    </div>
                 </div>
             </div>
         </section>
-
-
-        <section id="exercicio2" class="exercise">
-            <div class="container">
-                <h2>Exercício 2</h2>
-
-                <h3>Folha de Pagamento</h3>
-
+        <section class="exercise">
+            <div id="exercicio2" class="container">
+                <h2>
+                    Exercicio 2
+                </h2>
                 <p>
-                    Sistema para cadastro de funcionários, cálculo salarial,
-                    auxílio-alimentação e bônus de desempenho.
+                    bla bla bvla
                 </p>
-
                 <div class="exercise-content">
-                    <!-- Interface do exercício será criada com JavaScript -->
+                    <div class="configuracao">
+                        <label>
+                            Insira o valor do salario minimo atual
+                            <input
+                                type="number"
+                                id="salarioMin"
+                                min="1"
+                                placeholder="Exemplo 1300"
+                            >
+                        </label>
+                    </div>
+                    <div class="campos">  
+                        <input
+                            id="CodFuncionario"
+                            placeholder="Codigo do Funcionario"
+                        >      
+                        <select id="categoria">
+                            <option value="F">Funcionário operacional</option>
+                            <option value="G">Gerente</option>
+                        </select> 
+                        <input
+                            type="number"
+                            id="valorHora"
+                            placeholder="Valor da hora"
+                        >         
+                        <input
+                            type="number"
+                            id="HorasMes"
+                            placeholder="Horas trabalhadas/Mes"
+                        >              
+                        <select id="turno">
+                            <option value="M">Matutino</option>
+                            <option value="V">Vespertino</option>
+                            <option value="N">Noturno</option>
+                        </select>                
+                        <input
+                            type="number"
+                            id="avalFuncionario"
+                            placeholder="Desempenho mensal Funcionario"
+                            step="1"
+                            min="0"
+                            max="10"
+                        >                
+                    </div>
+                    <button onclick="addFuncionario()">
+                        Adicionar Funcionario
+                    </button>                
                 </div>
             </div>
         </section>
-
-
-        <section id="exercicio3" class="exercise">
-            <div class="container">
-                <h2>Exercício 3</h2>
-
-                <h3>Controle de Produção e Estoque</h3>
-
+        <section class="exercise">
+            <div id="exercicio3" class="container">
+                <h2>
+                    Exercicio 3
+                </h2>
                 <p>
-                    Sistema para gerenciamento de ordens de produção,
-                    estoque e custos.
+                    bla bla bvla
                 </p>
-
                 <div class="exercise-content">
-                    <!-- Interface do exercício será criada com JavaScript -->
+                    
                 </div>
             </div>
         </section>
-
-
-        <section id="exercicio4" class="exercise">
-            <div class="container">
-                <h2>Exercício 4</h2>
-
-                <h3>Reservas de Hotel</h3>
-
+        <section class="exercise">
+            <div id="exercicio4" class="container">
+                <h2>
+                    Exercicio 4
+                </h2>
                 <p>
-                    Sistema de reservas com tarifas dinâmicas,
-                    temporadas e tipos de quarto.
+                    bla bla bvla
                 </p>
-
                 <div class="exercise-content">
-                    <!-- Interface do exercício será criada com JavaScript -->
+                    
                 </div>
             </div>
         </section>
-
-
-        <section id="exercicio5" class="exercise">
-            <div class="container">
-                <h2>Exercício 5</h2>
-
-                <h3>Treinos Esportivos</h3>
-
+        <section class="exercise">
+            <div id="exercicio5" class="container">
+                <h2>
+                    Exercicio 5
+                </h2>
                 <p>
-                    Sistema para controle de treinos, carga semanal
-                    e identificação de risco de lesão.
+                    bla bla bvla
                 </p>
-
                 <div class="exercise-content">
-                    <!-- Interface do exercício será criada com JavaScript -->
+                    
                 </div>
             </div>
         </section>
-
-
-        <section id="exercicio6" class="exercise">
-            <div class="container">
-                <h2>Exercício 6</h2>
-
-                <h3>Vendas, Comissões e Metas</h3>
-
+        <section class="exercise">
+            <div id="exercicio6" class="container">
+                <h2>
+                    Exercicio 6
+                </h2>
                 <p>
-                    Sistema para registro de vendas, cálculo de comissões
-                    e análise de desempenho dos vendedores.
+                    bla bla bvla
                 </p>
-
                 <div class="exercise-content">
-                    <!-- Interface do exercício será criada com JavaScript -->
+
                 </div>
             </div>
         </section>
-
     </main>
-
-
     <footer class="footer">
         <div class="container">
-            <p>Lista de Exercícios • HTML + CSS + JavaScript</p>
+            <p>direitos reservados a mim</p>
+            <p> CID</p>
         </div>
     </footer>
-
     <script src="script.js"></script>
-
 </body>
 </html>
-

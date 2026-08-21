@@ -167,9 +167,9 @@ body {
 
 .configuracao,
 .campos {
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
     margin-bottom: 15px;
 }
 
@@ -182,7 +182,8 @@ body {
 
 .exercise-content input,
 .exercise-content select {
-    min-width: 160px;
+    width: 100%;
+    max-width: 320px;   
     padding: 10px;
     color: #f5f5f5;
     background-color: #101010;
@@ -195,7 +196,7 @@ body {
     padding: 10px 16px;
     margin-right: 6px;
     color: #ffffff;
-    background-color: #2f6fed;
+    background-color: #f82020;
     border: 0;
     border-radius: 6px;
     cursor: pointer;
@@ -203,7 +204,7 @@ body {
 }
 
 .exercise-content button:hover {
-    background-color: #4a82ed;
+    background-color: #f52121;
 }
 
 .exercise-content .secundario {
@@ -213,7 +214,7 @@ body {
 .mensagem {
     min-height: 24px;
     margin-top: 14px;
-    color: #ffd166;
+    color: #f7ad00;
 }
 
 .lista,
@@ -221,7 +222,7 @@ body {
     margin-top: 18px;
     padding: 15px;
     background-color: #121212;
-    border-left: 3px solid #2f6fed;
+    border-left: 3px solid #f32020;
 }
 
 .lista h4,
